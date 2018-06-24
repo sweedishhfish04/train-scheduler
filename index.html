@@ -40,7 +40,19 @@
 
     </div>
 
-
-    <script type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDjzNlRLQcMj93B_UXbSKYvfFa5Fta9zXU",
+            authDomain: "train-scheduler-fc482.firebaseapp.com",
+            databaseURL: "https://train-scheduler-fc482.firebaseio.com",
+            projectId: "train-scheduler-fc482",
+            storageBucket: "",
+            messagingSenderId: "1091626654616"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="app.js"></script>
 
 </body>
