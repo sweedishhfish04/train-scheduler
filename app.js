@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 
 function addTrainToDatabase(name, destination, time, frequency) {
-    firebase.database().ref('train/' + name.replace(/ /g,'')).set({
+    firebase.database().ref('train/' + name.replace(/ /g, '')).set({
         trainName: name,
         destination: destination,
         initialTime: time,
@@ -20,8 +20,8 @@ function addTrainToDatabase(name, destination, time, frequency) {
 
 function getDatabaseRecords() {
     $('#times').html('<tr><th>Train Name</th><th>Destination</th><th>Frequency</th><th>Next Arrival</th><th>Minutes Away</th></tr>')
-    firebase.database().ref('train').once('value').then(function(snapshot) {
-        snapshot.forEach(function(entry) {
+    firebase.database().ref('train').once('value').then(function (snapshot) {
+        snapshot.forEach(function (entry) {
             console.log(entry.val())
             $('#times').append('<tr><td>' + entry.val().trainName + '</td><td>' + entry.val().destination + '</td><td>' + entry.val().frequency + '</td><td>' + entry.val().initialTime + '</td><td>' + 5 + '</td></tr>')
         })
@@ -29,16 +29,17 @@ function getDatabaseRecords() {
 }
 
 
-$("#submit").click(function(){
-var name = $("#name").val()
-var destination = $("#destination").val()
-var first = $("#first").val()
-var min = $("#min").val()
+$("#submit").click(function () {
+    var name = $("#name").val()
+    var destination = $("#destination").val()
+    var first = $("#first").val()
+    var min = $("#min").val()
 
-addTrainToDatabase(name, destination, first, min)
+    addTrainToDatabase(name, destination, first, min)
+    setTimeout(getDatabaseRecords, 200)
 
 
-console.log(name,destination,first,min)
+    console.log(name, destination, first, min)
 })
 
 
