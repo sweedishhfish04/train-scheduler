@@ -19,9 +19,11 @@ function addTrainToDatabase(name, destination, time, frequency) {
 }
 
 function getDatabaseRecords() {
+    $('#times').html('<tr><th>Train Name</th><th>Destination</th><th>Frequency</th><th>Next Arrival</th><th>Minutes Away</th></tr>')
     firebase.database().ref('train').once('value').then(function(snapshot) {
         snapshot.forEach(function(entry) {
             console.log(entry.val())
+            $('#times').append('<tr><td>' + entry.val().trainName + '</td><td>' + entry.val().destination + '</td><td>' + entry.val().frequency + '</td><td>' + entry.val().initialTime + '</td><td>' + 5 + '</td></tr>')
         })
     })
 }
