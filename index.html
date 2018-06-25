@@ -18,31 +18,44 @@
     <div id="main">
         <h2>Current Schedule</h2>
 
+        <div id="times">
+            <table>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </table>
+
+        </div>
+
     </div>
 
     <div id="input">
         <h2>Add Train</h2>
         <div id="form">
 
-                <h3>Train Name</h3>
-                <input id="name" type="text"></input>
+            <h3>Train Name</h3>
+            <input id="name" type="text"></input>
 
-                <h3>Destination</h3>
-                <input  id="destination" type="text"></input>
+            <h3>Destination</h3>
+            <input id="destination" type="text"></input>
 
-                <h3>First Train Time (HH:mm - Military Time)</h3>                
-                <input id="first" type="text"></input>
+            <h3>First Train Time (HH:mm - Military Time)</h3>
+            <input id="first" type="text"></input>
 
-                <h3>Frequency(min)</h3>                
-                <input id="min" type="text" name="Frequency(min)"></input>
-                
-                <button id="submit">Submit</button>
-            
+            <h3>Frequency(min)</h3>
+            <input id="min" type="text" name="Frequency(min)"></input>
+
+            <button id="submit">Submit</button>
+
         </div>
 
     </div>
 
-    
+
     <script type="text/javascript" src="app.js"></script>
 
 </body>

@@ -40,3 +40,9 @@ input,button,h3 {
     margin-left:15px;
     display: block;
 }
+table {
+    width: 100%;
+}
+th {
+    text-align: left;
+}
